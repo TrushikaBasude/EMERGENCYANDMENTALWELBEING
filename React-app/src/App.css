@@ -1,0 +1,68 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #004e92, #000428); /* Beautiful gradient */
+  background-image: url("C:\Users\Admin\Desktop\react_vite\React-app\public\image.png"); /* Add a high-quality AI-themed image */
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
+}
+
+/* Chatbot Container */
+.chatbot_container {
+  background: rgba(255, 255, 255, 0.15); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Glassmorphism effect */
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Chatbot Heading */
+.chatbot_container h2 {
+  text-align: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Input Field */
+.chatbot_container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Send Button */
+.chatbot_container button {
+  width: 100%;
+  padding: 10px;
+  background: #1c92d2;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.chatbot_container button:hover {
+  background: #f2fcfe;
+  color: #1c92d2;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
