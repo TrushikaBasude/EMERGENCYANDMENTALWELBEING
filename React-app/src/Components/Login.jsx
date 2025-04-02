@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { loginUser } from "../api";
+import "../Components/Login.css"; // Import CSS
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,41 +16,38 @@ export const Login = () => {
     } catch (error) {
       console.error("Login error:", error);
       setMessage(
-        error.response?.data ||
-        "An error occurred during login. Please try again."
+        error.response?.data || "An error occurred during login. Please try again."
       );
     }
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Email:</label>
+    <div className="auth-container">
+      <div className="auth-box">
+        <h1 className="auth-title">Login</h1>
+        <form className="auth-form" onSubmit={handleLogin}>
           <input
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Password:</label>
           <input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
+          <button className="auth-button" type="submit">Login</button>
+        </form>
+        {message && <p>{message}</p>}
+        <div className="auth-links">
+          <p><Link to="/forgot-password">Forgot Password?</Link></p>
+          <p>Don't have an account? <Link to="/signup">Sign Up</Link></p>
         </div>
-        <button type="submit" style={{ padding: "10px 20px" }}>
-          Login
-        </button>
-      </form>
-      {message && <p style={{ marginTop: "10px" }}>{message}</p>}
+      </div>
     </div>
   );
 };

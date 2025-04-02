@@ -123,13 +123,14 @@ const MoodTracker = () => {
           <div className="report-content">
             <h2>Weekly Mood Report</h2>
             <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={processWeeklyData()}>
-                <XAxis dataKey="date" stroke="white" />
-                <YAxis stroke="white" />
-                <Tooltip />
-                <Bar dataKey="mood" fill="#00c3ff" />
-              </BarChart>
-            </ResponsiveContainer>
+  <BarChart data={processWeeklyData()}>
+    <XAxis dataKey="date" tick={{ fill: "black" }} stroke="black" />
+    <YAxis tick={{ fill: "black" }} stroke="black" />
+    <Tooltip />
+    <Bar dataKey="mood" fill="#00c3ff" />
+  </BarChart>
+</ResponsiveContainer>
+
             <button onClick={() => setShowReport(false)} className="close-btn">Close</button>
           </div>
         </div>

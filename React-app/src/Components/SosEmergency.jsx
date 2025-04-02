@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
+import "./sos.css";
 
 const SosEmergency = () => {
   const [position, setPosition] = useState(null);

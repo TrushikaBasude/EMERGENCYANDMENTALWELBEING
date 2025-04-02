@@ -1,0 +1,5 @@
+@import "./Login.css"; /* Using the same styles */
+
+.auth-box {
+  background: rgba(255, 255, 255, 0.15);
+}

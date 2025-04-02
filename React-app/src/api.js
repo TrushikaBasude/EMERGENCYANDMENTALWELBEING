@@ -8,6 +8,7 @@ export const signupUser = async (userData) => {
     const response = await axios.post(`${BASE_URL}/users/signup`, userData);
     return response.data;
   } catch (error) {
+    console.error("API Error:", error.response ? error.response.data : error.message);
     throw error;
   }
 };
@@ -15,6 +16,14 @@ export const signupUser = async (userData) => {
 export const loginUser = async (userData) => {
   try {
     const response = await axios.post(`${BASE_URL}/users/login`, userData);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+export const resetPassword = async (data) => {
+  try {
+    const response = await axios.post(`${BASE_URL}/forgotpassword/reset`, data);
     return response.data;
   } catch (error) {
     throw error;

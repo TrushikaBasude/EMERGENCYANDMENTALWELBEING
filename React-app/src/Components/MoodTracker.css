@@ -7,6 +7,13 @@
   max-width: 400px;
   margin: auto;
   text-align: center;
+  color: black; /* Ensures text is visible */
+}
+
+/* Mood Heading */
+.mood-card h2 {
+  color: black; /* Makes "HOW ARE YOU FEELING TODAY?" black */
+  font-weight: bold;
 }
 
 /* Mood Slider */
@@ -31,6 +38,22 @@
   background-color: #008fcc;
 }
 
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
 /* Report Button */
 .report-btn {
   background-color: #333;
@@ -42,6 +65,12 @@
   margin-top: 10px;
   border: none;
   transition: background-color 0.3s;
+}
+
+/* Weekly Report Button - Heading */
+.report-btn span {
+  color: black; /* Ensures "Show Weekly Report 📊" is black */
+  font-weight: bold;
 }
 
 .report-btn:hover {
@@ -63,27 +92,43 @@
   animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Popup Content */
 .report-content {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
   width: 80%;
   max-width: 400px;
   backdrop-filter: blur(10px);
-  color: white;
+  color: black;
 }
 
 /* Close Button */
 .close-btn {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
   padding: 10px 20px;
   margin-top: 10px;
   cursor: pointer;
-  color: white;
+  color: black;
   border-radius: 8px;
 }
 
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Emoji Styling */
+.emoji {
+  font-size: 24px;
+  display: block;
+  margin: 5px 0;
+  color: black;
+}
+
+/* Mood Recommendation Text */
+.recommendation {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { signupUser } from "../api";
+import "../Components/Signup.css"; // Import CSS
 
 export const SignUp = () => {
   const [name, setName] = useState("");
@@ -15,51 +16,41 @@ export const SignUp = () => {
     } catch (error) {
       console.error("Signup error:", error);
       setMessage(
-        error.response?.data ||
-        "An error occurred during signup. Please try again."
+        error.response?.data || "An error occurred during signup. Please try again."
       );
     }
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-      <h1>Sign Up</h1>
-      <form onSubmit={handleSignup}>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Name:</label>
+    <div className="auth-container">
+      <div className="auth-box">
+        <h1 className="auth-title">Sign Up</h1>
+        <form className="auth-form" onSubmit={handleSignup}>
           <input
             type="text"
+            placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Email:</label>
           <input
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
-        </div>
-        <div style={{ marginBottom: "10px" }}>
-          <label>Password:</label>
           <input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-            style={{ width: "100%", padding: "8px", marginTop: "5px" }}
           />
-        </div>
-        <button type="submit" style={{ padding: "10px 20px" }}>
-          Sign Up
-        </button>
-      </form>
-      {message && <p style={{ marginTop: "10px" }}>{message}</p>}
+          <button className="auth-button" type="submit">Sign Up</button>
+        </form>
+        {message && <p>{message}</p>}
+      </div>
     </div>
   );
 };

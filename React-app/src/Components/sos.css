@@ -1,0 +1,85 @@
+/* Full-page background with centered card */
+.sos-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url('/your-background-image.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Properly centered SOS Emergency card */
+.sos-card {
+    background: #ffffff; /* Fully solid background */
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    width: 400px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Light shadow effect */
+}
+
+/* Title */
+.sos-card h1 {
+    color: #000; /* Dark text for visibility */
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Input Field */
+.sos-card input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Buttons */
+.sos-card button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+/* Different Button Colors */
+.get-location {
+    background-color: #007bff;
+}
+
+.get-location:hover {
+    background-color: #0056b3;
+}
+
+.send-location {
+    background-color: #28a745;
+}
+
+.send-location:hover {
+    background-color: #1e7e34;
+}
+
+/* Map Container */
+.map-container {
+    height: 300px;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+/* Address Text */
+.sos-card p {
+    color: #000;
+    font-size: 14px;
+    margin-top: 10px;
+}

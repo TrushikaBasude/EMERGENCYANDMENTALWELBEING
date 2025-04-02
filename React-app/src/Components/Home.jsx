@@ -1,3 +1,4 @@
+// Home.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "../Components/Home.css"; 
@@ -8,7 +9,7 @@ const Home = () => {
       <header>
         <nav>
           <ul>
-            <li id="topic">Emergency and Mental Wellbeing</li>
+            <li id="topic">ZenAlert</li>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/sos">SOS Help</Link></li>
             <li><Link to="/assessment">Assessment</Link></li>
@@ -16,7 +17,7 @@ const Home = () => {
             <li><Link to="/videos">Videos</Link></li>
             <li><Link to="/mood">Mood Track</Link></li>
             <li><Link to="/news">News</Link></li> 
-            <li><Link to="/tasks">Task Manager</Link></li> {/* Add Task Manager Link */}
+            <li><Link to="/tasks">Task Manager</Link></li>
           </ul>
         </nav>
       </header>
@@ -26,10 +27,10 @@ const Home = () => {
         <div className="buttons">
           <Link to="/signup"><button>Sign Up</button></Link>
           <Link to="/login"><button>Login</button></Link>
+          <Link to="/forgot-password"><button>Forgot Password</button></Link>
           <Link to="/chatbot"><button>Try Chatbot</button></Link>
           <Link to="/mood"><button>Track Mood</button></Link>
         </div>
-
       </main>
 
       <footer>

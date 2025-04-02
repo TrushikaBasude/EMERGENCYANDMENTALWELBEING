@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../Components/Chatbot.css";
 
+
+
 const Chatbot = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState("");
@@ -9,12 +11,15 @@ const Chatbot = () => {
 
     // Load API key from .env file
     useEffect(() => {
-        setApiKey(import.meta.env.VITE_COHERE_API_KEY);
+        const key = import.meta.env.VITE_OPENAI_API_KEY;
+        console.log("Loaded API Key:", key); // 👈 This will print the API key
+        setApiKey(key);
     }, []);
+    
 
     const fetchBotResponse = async (userMessage) => {
         if (!apiKey) {
-            return "API key is missing. Please check your environment variables.";
+            return "API key is missing. Please check your .env file.";
         }
 
         try {
@@ -22,7 +27,11 @@ const Chatbot = () => {
                 "https://api.openai.com/v1/chat/completions",
                 {
                     model: "gpt-3.5-turbo",
-                    messages: [{ role: "user", content: userMessage }],
+                    messages: [
+                        { role: "system", content: "You are a helpful AI assistant." },
+                        { role: "user", content: userMessage }
+                    ],
+                    max_tokens: 100,
                 },
                 {
                     headers: {
@@ -32,10 +41,10 @@ const Chatbot = () => {
                 }
             );
 
-            return response.data.choices[0].message.content || "No response.";
+            return response.data.choices?.[0]?.message?.content || "No response.";
         } catch (error) {
             console.error("API Error:", error);
-            return "Error connecting to AI. Please check your API key.";
+            return "Error connecting to AI. Check your API key and network.";
         }
     };
 

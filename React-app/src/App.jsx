@@ -1,9 +1,11 @@
+// App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Home from "./Components/Home";
 import { SignUp } from "./Components/Signup";
 import { Login } from "./Components/Login";
+import ForgotPassword from "./Components/ForgotPassword"; // Import the new component
 import Help from "./Components/SosEmergency";
 import Assessment from "./Components/Assessment";
 import Chatbot from "./Components/Chatbot";
@@ -22,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} /> {/* New route */}
           <Route path="/sos" element={<Help />} />
           <Route path="/assessment" element={<Assessment />} />
           <Route path="/chatbot" element={<Chatbot />} />
